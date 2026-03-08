@@ -1,0 +1,42 @@
+.admin_dashboard {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.admin_dashboard h1 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.admin_welcome {
+  font-size: 1.125rem;
+  color: #222;
+  margin-bottom: 0.25rem;
+}
+
+.admin_sub {
+  color: #717171;
+  font-size: 0.9375rem;
+  margin-bottom: 1.5rem;
+}
+
+.admin_links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.admin_link {
+  padding: 0.5rem 1rem;
+  background: #ff5a5f;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+
+.admin_link:hover {
+  background: #e04848;
+}

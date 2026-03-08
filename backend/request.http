@@ -1,0 +1,51 @@
+
+#GET ALL THE USERS
+GET http://localhost:5000/users
+### 
+#GET A SINGLE USER
+GET http://localhost:5000/users/2
+###
+
+#REGISTER A USER
+POST http://localhost:5000/register
+content-type:application/json
+
+{
+  "email":"phumzile@gmail.com",
+  "password":"password123"
+}
+
+###
+#SIGN IN A USER
+POST http://localhost:5000/login
+content-type:application/json
+
+{
+  "email":"johdoe@gmail.com",
+  "password":"password321"
+}
+
+
+###
+
+#GET ALL THE BOOKINGS
+GET http://localhost:5000/bookings
+###
+#GET A SINGLE BOOKING
+GET http://localhost:5000/bookings/2
+###
+#GET ALL LISTINGS
+GET http://localhost:5000/listings
+###
+#GET A SINGLE LISTING
+GET http://localhost:5000/listings/1
+
+
+{/*POST http://localhost:5000/posts 
+content-type:application/json
+{
+
+  "title":"airBnB clone",
+  "author":"Phumzile Mkhabela"
+}
+*/}

@@ -1,0 +1,78 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Phumi",
+      "email": "phumzile0410mkhabela@gmail.com",
+      "phone": "067 8379 728",
+      "password": "password123"
+    },
+    {
+      "id": 2,
+      "name": "John Doe",
+      "email": "johndoe@gmail.com",
+      "phone": "067 8379 728",
+      "password": "password1"
+    },
+    {
+      "id": 3,
+      "name": "Jane Smith",
+      "email": "janesmith@gmail.com",
+      "phone": "067 8379 728",
+      "password": "password123"
+    }
+  ],
+  "booking": [
+    {
+      "id": 1,
+      "listingId": 1,
+      "startDate": "2026-03-20",
+      "endDate": "2026-03-25",
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "listingId": 2,
+      "startDate": "2026-03-06",
+      "endDate": "2026-03-09",
+      "userId": 1
+    },
+    {
+      "id": 3,
+      "listingId": 1,
+      "startDate": "2026-04-01",
+      "endDate": "2026-04-05",
+      "userId": 2
+    }
+  ],
+  "listing": [
+    {
+      "id": 1,
+      "bath_number": 2,
+      "bed_number": 3,
+      "zip_code": "2000",
+      "address": "123 Main Street",
+      "city": "Johannesburg",
+      "country": "South Africa",
+      "price": 1500,
+      "description": "A beautiful house in the heart of Johannesburg",
+      "email": "phumzile0410mkhabela@gmail.com",
+      "userId": 2,
+      "image": "https://via.placeholder.com/300"
+    },
+    {
+      "id": 2,
+      "bath_number": 2,
+      "bed_number": 3,
+      "zip_code": "2000",
+      "address": "123 Glen Street",
+      "city": "Johannesburg",
+      "country": "South Africa",
+      "price": 1500,
+      "description": "A beautiful house in the heart of Johannesburg",
+      "email": "phumzile0410mkhabela@gmail.com",
+      "userId": 3,
+      "image": "https://via.placeholder.com/300"
+    }
+  ]
+}

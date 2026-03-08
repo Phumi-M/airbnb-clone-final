@@ -1,0 +1,158 @@
+.card,
+.card_link {
+  display: block;
+  border-radius: var(--radius-md, 12px);
+  overflow: hidden;
+  box-shadow: var(--shadow-md, 0 2px 8px rgba(0, 0, 0, 0.08));
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  background: var(--color-bg, white);
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+.card_link:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.card_img_wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.card:hover img {
+  transform: scale(1.03);
+}
+
+.card_wishlist {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease;
+  z-index: 1;
+}
+
+.card_wishlist:hover {
+  transform: scale(1.08);
+}
+
+.card_wishlist:focus-visible {
+  outline: 2px solid #222;
+  outline-offset: 2px;
+}
+
+.card_wishlist_icon {
+  font-size: 1.25rem !important;
+  color: #222;
+}
+
+.card_wishlist_icon_filled {
+  color: #ff5a5f !important;
+}
+
+.card_guest_favorite {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.95);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #222;
+  z-index: 1;
+}
+
+.card_info {
+  padding: 1rem 1.25rem;
+}
+
+.card_info h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.card_info h4 {
+  margin: 0 0 0.5rem;
+  font-weight: 400;
+  color: #717171;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card_info_bottom {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.card_info h3 {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.card_star {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #222;
+}
+
+.card_star_icon {
+  font-size: 1rem !important;
+  color: #222;
+}
+
+/* Arrow for inspiration / redirect cards */
+.card_arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  color: #222;
+  transition: transform 0.2s ease;
+}
+
+.card:hover .card_arrow {
+  transform: translateX(4px);
+}
+
+.card_arrow_icon {
+  font-size: 1.25rem !important;
+}

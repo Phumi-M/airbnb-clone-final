@@ -1,0 +1,36 @@
+.giftcards_page {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.giftcards_page h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0 0 1rem;
+  color: #222;
+}
+
+.giftcards_page_lead {
+  font-size: 1.125rem;
+  color: #222;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.giftcards_page_info p {
+  color: #717171;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.giftcards_page_back {
+  display: inline-block;
+  font-weight: 600;
+  color: #222;
+  text-decoration: underline;
+}
+
+.giftcards_page_back:hover {
+  color: #000;
+}

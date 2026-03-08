@@ -1,0 +1,32 @@
+.online_experiences_page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.online_experiences_page h1 {
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.online_experiences_page p {
+  color: #717171;
+  margin-bottom: 1.5rem;
+}
+
+.online_experiences_page_btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: #222;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.online_experiences_page_btn:hover {
+  background: #000;
+}

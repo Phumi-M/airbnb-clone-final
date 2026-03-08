@@ -1,0 +1,112 @@
+.login_form {
+  padding: 1.5rem;
+  max-width: 400px;
+}
+
+.login_form h2 {
+  margin-bottom: 1rem;
+}
+
+.login_error {
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  background: #fff4f4;
+  color: #c00;
+  border-radius: 8px;
+  font-size: 0.875rem;
+}
+
+.login_loading {
+  margin-bottom: 1rem;
+  color: #717171;
+  font-size: 0.875rem;
+}
+
+.login_field {
+  margin-bottom: 0.5rem;
+}
+
+.login_fieldError {
+  display: block;
+  font-size: 0.75rem;
+  color: #c00;
+  margin-top: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.login_inputError {
+  border-color: #c00 !important;
+}
+
+.login_footer {
+  font-size: 0.875rem;
+  color: #222;
+}
+
+.login_signup {
+  color: #ff5a5f;
+  font-weight: 500;
+}
+
+.login_linkButton {
+  background: none;
+  border: none;
+  color: #ff5a5f;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+  font-size: inherit;
+  font-weight: 500;
+}
+
+.login_linkButton:hover {
+  color: #e04848;
+}
+
+.facebook_login,
+.google_login {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  background: white;
+}
+
+.login_or {
+  margin: 1rem 0;
+}
+
+.or_divider {
+  height: 1px;
+  background: #ddd;
+  margin: 0.5rem 0;
+}
+
+.browser_default,
+.broswer_default {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.sign_in_button {
+  width: 100%;
+  padding: 0.75rem;
+  background: #ff5a5f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+.divider {
+  height: 1px;
+  background: #ebebeb;
+  margin: 1rem 0;
+}

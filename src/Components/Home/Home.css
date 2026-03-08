@@ -1,0 +1,494 @@
+.home {
+  width: 100%;
+  min-height: 100vh;
+  background: #f7f7f7;
+}
+
+.home_error {
+  background: #fef2f2;
+  color: #b91c1c;
+  padding: 0.75rem 1.5rem;
+  text-align: center;
+  font-size: 0.9375rem;
+  border-bottom: 1px solid #fecaca;
+}
+
+/* Debug strip (when DEBUG is true) */
+.home_debug {
+  position: fixed;
+  top: 0.5rem;
+  right: 0.5rem;
+  padding: 0.35rem 0.6rem;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 0.75rem;
+  font-family: monospace;
+  border-radius: 6px;
+  z-index: 100;
+}
+
+/* Loading state */
+.home_loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40vh;
+  padding: 2rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #717171;
+}
+
+/* Section container */
+.home_section {
+  max-width: 1760px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 2.5rem;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .home_section {
+    padding: 2rem 1.5rem 3rem;
+  }
+}
+
+/* Inspiration for your next trip – section + heading above province cards */
+.home_inspiration_trip_section {
+  margin-bottom: 0.5rem;
+}
+
+.home_inspiration_trip_heading {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #222;
+  margin: 0 0 1.25rem;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+@media (min-width: 640px) {
+  .home_inspiration_trip_heading {
+    font-size: 2rem;
+  }
+}
+
+/* First row: 4 province cards (Western Cape, KZN, Mpumalanga, Gauteng) */
+.home_section_row1 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .home_section_row1 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 960px) {
+  .home_section_row1 {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.75rem;
+    margin-bottom: 1.75rem;
+  }
+}
+
+/* Places to stay section – grouped like reference */
+.home_places_section {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid #ebebeb;
+}
+
+.home_places_heading {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #222;
+  margin: 0 0 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.home_places_group {
+  margin-bottom: 2.5rem;
+}
+
+.home_places_group:last-child {
+  margin-bottom: 0;
+}
+
+.home_places_group_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.home_places_subheading {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #222;
+  margin: 0;
+}
+
+.home_places_view_all {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #222;
+  text-decoration: underline;
+}
+
+.home_places_view_all:hover {
+  color: #717171;
+}
+
+.home_places_grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .home_places_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 960px) {
+  .home_places_grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .home_places_grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+}
+
+/* Discover Airbnb Experiences – two cards under Places to stay */
+.home_experiences_section {
+  margin-top: 3rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid #ebebeb;
+}
+
+.home_experiences_heading {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #222;
+  margin: 0 0 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.home_experiences_grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .home_experiences_grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+.home_experiences_card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  min-height: 320px;
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  padding: 1.5rem;
+  transition: transform 0.2s ease;
+}
+
+.home_experiences_card:hover {
+  transform: scale(1.02);
+}
+
+.home_experiences_card_bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.home_experiences_card_bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.2) 40%, transparent 70%);
+}
+
+.home_experiences_card_title {
+  position: relative;
+  z-index: 1;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.75rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.home_experiences_card_btn {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  background: #fff;
+  color: #222;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.home_experiences_card:hover .home_experiences_card_btn {
+  background: #f7f7f7;
+  color: #000;
+}
+
+/* Shop Airbnb gift cards */
+.home_giftcards_section {
+  margin-top: 3rem;
+  padding: 2.5rem 1.5rem;
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid #ebebeb;
+}
+
+.home_giftcards_content {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .home_giftcards_content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+  }
+}
+
+.home_giftcards_text {
+  flex-shrink: 0;
+}
+
+.home_giftcards_heading {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #222;
+  margin: 0 0 1.25rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.home_giftcards_btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: #222;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.home_giftcards_btn:hover {
+  background: #000;
+}
+
+.home_giftcards_img_wrap {
+  flex-shrink: 0;
+  max-width: 560px;
+  width: 100%;
+}
+
+.home_giftcards_img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Questions about hosting? banner */
+.home_hosting_banner {
+  margin-top: 3rem;
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  min-height: 280px;
+  display: flex;
+  align-items: center;
+}
+
+.home_hosting_banner_bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1200");
+  background-size: cover;
+  background-position: center;
+}
+
+.home_hosting_banner_bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, transparent 60%);
+}
+
+.home_hosting_banner_content {
+  position: relative;
+  z-index: 1;
+  padding: 2.5rem 2rem;
+  max-width: 480px;
+}
+
+.home_hosting_banner_heading {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 1.25rem;
+  line-height: 1.2;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.home_hosting_banner_btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: #222;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.home_hosting_banner_btn:hover {
+  background: #000;
+}
+
+/* Inspiration for future getaways */
+.home_inspiration_section {
+  margin-top: 3rem;
+  padding: 2rem 0;
+}
+
+.home_inspiration_heading {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #222;
+  margin: 0 0 1.5rem;
+}
+
+.home_inspiration_tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #ebebeb;
+  padding-bottom: 0.75rem;
+}
+
+.home_inspiration_tab {
+  background: none;
+  border: none;
+  padding: 0.5rem 0;
+  font-size: 1rem;
+  color: #717171;
+  cursor: pointer;
+  font-weight: 500;
+  position: relative;
+}
+
+.home_inspiration_tab:hover {
+  color: #222;
+}
+
+.home_inspiration_tab_active {
+  color: #222;
+  font-weight: 600;
+}
+
+.home_inspiration_tab_active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.75rem;
+  height: 2px;
+  background: #222;
+}
+
+.home_inspiration_grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem 2rem;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 640px) {
+  .home_inspiration_grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 960px) {
+  .home_inspiration_grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.home_inspiration_dest {
+  display: block;
+  text-decoration: none;
+  color: #222;
+  padding: 0.25rem 0;
+}
+
+.home_inspiration_dest:hover {
+  text-decoration: underline;
+}
+
+.home_inspiration_dest_city {
+  display: block;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.home_inspiration_dest_region {
+  display: block;
+  font-size: 0.9rem;
+  color: #717171;
+}
+
+.home_inspiration_show_more {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #222;
+  text-decoration: underline;
+}
+
+.home_inspiration_show_more:hover {
+  color: #000;
+}

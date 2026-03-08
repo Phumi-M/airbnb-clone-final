@@ -1,0 +1,82 @@
+.banner {
+  width: 100%;
+  max-width: 100vw;
+  min-height: 320px;
+  height: clamp(320px, 50vw, 540px);
+  position: relative;
+  background-image: url("https://a0.muscache.com/im/pictures/miso/Hosting-750299643707649310/original/0156bb7a-88c6-497a-a4bc-30fa14b44669.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.banner_info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
+  padding: 1.25rem 1rem 1.5rem;
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.banner_info_explore {
+  background-color: #ff7779;
+  color: white;
+  text-transform: inherit;
+  margin-top: 20px;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.banner_info_explore:hover {
+  background-color: white;
+  color: #ff7779;
+}
+
+.banner_info > h5 {
+  margin-top: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+@media (min-width: 640px) {
+  .banner {
+    min-height: 400px;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .banner_info {
+    width: auto;
+    right: auto;
+    padding: 2rem 2.5rem 2.5rem;
+    max-width: 340px;
+  }
+}
+
+@media (min-width: 960px) {
+  .banner {
+    min-height: 540px;
+    height: 540px;
+  }
+
+  .banner_info {
+    padding-top: 2rem;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 40px;
+    max-width: 300px;
+  }
+}

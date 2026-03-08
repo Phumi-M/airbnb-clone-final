@@ -1,0 +1,580 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 1.5rem 0.75rem 2rem;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.header_logoLink {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  flex-shrink: 0;
+}
+
+.header_logoLink:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+.header_logo {
+  object-fit: contain;
+  height: 100px;
+  margin-left: 20px;
+  cursor: pointer;
+  display: block;
+}
+
+/* Search bar on same row as logo and Become a Host */
+.header_searchBar {
+  display: flex;
+  align-items: stretch;
+  flex: 1;
+  min-width: 0;
+  max-width: 600px;
+  margin: 0 1rem;
+  padding: 0.35rem 0.5rem 0.35rem 0.75rem;
+  gap: 0;
+  background: #fff;
+  border: 1px solid #ebebeb;
+  border-radius: 9999px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+.header_searchBar:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.header_searchBar_segment {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.5rem 0.75rem;
+  min-width: 0;
+}
+
+.header_searchBar_hotel {
+  flex: 1;
+  min-width: 120px;
+}
+
+.header_searchBar_whereWrap {
+  position: relative;
+}
+
+/* Suggested destinations dropdown */
+.header_whereDropdown {
+  position: absolute;
+  top: calc(100% + 0.25rem);
+  left: 0;
+  right: 0;
+  min-width: 320px;
+  max-width: 420px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  z-index: 150;
+  border: 1px solid #ebebeb;
+}
+
+.header_whereDropdown_title {
+  padding: 1rem 1rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #717171;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.header_whereDropdown_list {
+  max-height: 320px;
+  overflow-y: auto;
+  padding: 0.25rem 0 0.75rem;
+}
+
+.header_whereDropdown_item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.65rem 1rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s;
+}
+
+.header_whereDropdown_item:hover {
+  background: #f7f7f7;
+}
+
+.header_whereDropdown_item:focus-visible {
+  outline: 2px solid #222;
+  outline-offset: -2px;
+}
+
+.header_whereDropdown_icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f7f7f7;
+  border-radius: 50%;
+  color: #222;
+}
+
+.header_whereDropdown_text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  min-width: 0;
+}
+
+.header_whereDropdown_primary {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #222;
+}
+
+.header_whereDropdown_secondary {
+  font-size: 0.8125rem;
+  color: #717171;
+}
+
+.header_searchBar_label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 0.1rem;
+}
+
+.header_searchBar_input {
+  border: none;
+  outline: none;
+  font-size: 0.875rem;
+  color: #222;
+  background: transparent;
+  padding: 0;
+  width: 100%;
+}
+
+.header_searchBar_input::placeholder {
+  color: #717171;
+}
+
+.header_searchBar_divider {
+  width: 1px;
+  background: #ebebeb;
+  margin: 0.4rem 0;
+  align-self: stretch;
+  flex-shrink: 0;
+}
+
+.header_searchBar_dates {
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  min-width: 180px;
+}
+
+.header_searchBar_trigger {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0.4rem 0.6rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  border-radius: 8px;
+  min-width: 0;
+  flex: 1;
+}
+
+.header_searchBar_trigger:hover {
+  background: #f7f7f7;
+}
+
+.header_searchBar_value {
+  font-size: 0.875rem;
+  color: #717171;
+}
+
+.header_searchBar_dividerVertical {
+  width: 1px;
+  height: 20px;
+  background: #ebebeb;
+  flex-shrink: 0;
+}
+
+.header_searchBar_dateDropdown {
+  position: absolute;
+  top: calc(100% + 0.25rem);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  padding: 0.75rem;
+  z-index: 200;
+}
+
+.header_searchBar_dateDropdown .rdrDateRangePickerWrapper {
+  flex-direction: column;
+}
+
+.header_searchBar_guests {
+  min-width: 80px;
+}
+
+.header_searchBar_guestsRow {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+}
+
+.header_searchBar_guestsInput {
+  width: 2rem;
+  border: none;
+  outline: none;
+  font-size: 0.875rem;
+  color: #222;
+  background: transparent;
+  padding: 0;
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.header_searchBar_guestsInput::-webkit-outer-spin-button,
+.header_searchBar_guestsInput::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.header_searchBar_guestsText {
+  font-size: 0.875rem;
+  color: #717171;
+}
+
+.header_searchBar_searchBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1.25rem;
+  margin-left: 0.25rem;
+  align-self: center;
+  background: linear-gradient(to right, #e61e4d 0%, #e31c5f 50%, #d70466 100%);
+  color: #fff;
+  border: none;
+  border-radius: 9999px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: box-shadow 0.2s, filter 0.2s;
+}
+
+.header_searchBar_searchBtn:hover {
+  filter: brightness(1.05);
+  box-shadow: 0 2px 12px rgba(227, 28, 95, 0.4);
+}
+
+.header_searchBar_searchIcon {
+  font-size: 1.125rem !important;
+}
+
+.header_right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+/* Logged out: Become a Host + globe + pill */
+.header_becomeHost {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #222;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 0;
+}
+
+.header_becomeHost:hover {
+  text-decoration: underline;
+}
+
+.header_becomeHost:focus-visible {
+  outline: 2px solid #222;
+  outline-offset: 4px;
+}
+
+.header_globe {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #222;
+  border-radius: 50%;
+}
+
+.header_globe:hover {
+  background: #f7f7f7;
+}
+
+.header_globe:focus-visible {
+  outline: 2px solid #222;
+  outline-offset: 2px;
+}
+
+.header_globeIcon {
+  font-size: 1.25rem !important;
+}
+
+/* Pill menu: hamburger + user icon (logged out) or hamburger + avatar (logged in) */
+.header_pillMenu {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.5rem 0.4rem 0.75rem;
+  border: 1px solid #dddddd;
+  border-radius: 9999px;
+  background: #fff;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease;
+}
+
+.header_pillMenu:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.header_pillMenu:focus-visible {
+  outline: 2px solid #222;
+  outline-offset: 2px;
+}
+
+.header_pillIcon {
+  color: #222 !important;
+  font-size: 1.125rem !important;
+}
+
+.header_pillPerson {
+  color: #717171 !important;
+  font-size: 1.25rem !important;
+}
+
+.header_pillAvatar {
+  width: 28px !important;
+  height: 28px !important;
+  font-size: 0.875rem !important;
+  background: #ebebeb !important;
+  color: #717171 !important;
+}
+
+/* Logged in: user name + pill */
+.header_userName {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #222;
+}
+
+.header_dropdownWrapper {
+  position: relative;
+}
+
+.header_dropdown {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  min-width: 180px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  z-index: 200;
+}
+
+.header_dropdownItem {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: none;
+  background: none;
+  font-size: 0.875rem;
+  text-align: left;
+  cursor: pointer;
+  color: #222;
+}
+
+.header_dropdownItem:hover {
+  background: #f7f7f7;
+}
+
+.header_dropdownLink {
+  text-decoration: none;
+  color: inherit;
+  font: inherit;
+}
+
+.header_dropdownItem:focus-visible {
+  outline: 2px solid #222;
+  outline-offset: -2px;
+}
+
+/* Responsive: tablet */
+@media (max-width: 1024px) {
+  .header {
+    padding: 0.6rem 1rem 0.6rem 1.25rem;
+    gap: 0.75rem;
+  }
+
+  .header_logo {
+    height: 72px;
+    margin-left: 12px;
+  }
+
+  .header_searchBar {
+    max-width: 480px;
+    padding: 0.3rem 0.4rem 0.3rem 0.6rem;
+  }
+
+  .header_searchBar_dates {
+    min-width: 140px;
+  }
+
+  .header_searchBar_trigger .header_searchBar_value {
+    font-size: 0.8125rem;
+  }
+
+  .header_userName {
+    display: none;
+  }
+}
+
+/* Responsive: mobile – stack search below logo row */
+@media (max-width: 768px) {
+  .header {
+    flex-wrap: wrap;
+    padding: 0.5rem 1rem;
+    gap: 0.5rem;
+  }
+
+  .header_logoLink {
+    order: 1;
+  }
+
+  .header_logo {
+    height: 56px;
+    margin-left: 0;
+  }
+
+  .header_searchBar {
+    order: 3;
+    flex: 1 1 100%;
+    max-width: none;
+    margin: 0.25rem 0 0;
+    width: 100%;
+  }
+
+  .header_searchBar_segment.header_searchBar_hotel {
+    min-width: 0;
+  }
+
+  .header_searchBar_dates {
+    min-width: 100px;
+  }
+
+  .header_searchBar_trigger {
+    padding: 0.35rem 0.5rem;
+  }
+
+  .header_searchBar_trigger .header_searchBar_value {
+    font-size: 0.75rem;
+  }
+
+  .header_searchBar_guests {
+    min-width: 60px;
+  }
+
+  .header_searchBar_guestsInput {
+    width: 1.75rem;
+  }
+
+  .header_searchBar_searchBtn {
+    padding: 0.45rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  .header_right {
+    order: 2;
+    margin-left: auto;
+  }
+
+  .header_becomeHost {
+    font-size: 0.8125rem;
+  }
+
+  .header_whereDropdown {
+    min-width: 280px;
+    max-width: calc(100vw - 2rem);
+  }
+
+  .header_searchBar_dateDropdown {
+    left: 0.5rem;
+    right: 0.5rem;
+    transform: none;
+    width: calc(100vw - 1rem);
+    max-width: 360px;
+  }
+}
+
+/* Responsive: small mobile */
+@media (max-width: 480px) {
+  .header {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .header_logo {
+    height: 48px;
+  }
+
+  .header_searchBar {
+    padding: 0.25rem 0.35rem 0.25rem 0.5rem;
+  }
+
+  .header_searchBar_label {
+    font-size: 0.6875rem;
+  }
+
+  .header_searchBar_input,
+  .header_searchBar_value,
+  .header_searchBar_guestsText {
+    font-size: 0.8125rem;
+  }
+
+  .header_searchBar_dates {
+    min-width: 0;
+  }
+
+  .header_dropdown {
+    min-width: 160px;
+    right: 0;
+    left: auto;
+  }
+}

@@ -1,0 +1,129 @@
+.edit_listing {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+}
+
+.edit_listing h1 {
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.edit_listing_form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.edit_listing_section {
+  padding: 1rem 0;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.edit_listing_section h2 {
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.edit_listing_field {
+  margin-bottom: 1rem;
+}
+
+.edit_listing_field label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #222;
+  margin-bottom: 0.35rem;
+}
+
+.edit_listing_field input,
+.edit_listing_field textarea,
+.edit_listing_field select {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  font-size: 0.9375rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.edit_listing_field input:focus,
+.edit_listing_field textarea:focus,
+.edit_listing_field select:focus {
+  outline: none;
+  border-color: #222;
+  box-shadow: 0 0 0 1px #222;
+}
+
+.edit_listing_field textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.edit_listing_input_error {
+  border-color: #c00 !important;
+}
+
+.edit_listing_error {
+  display: block;
+  font-size: 0.75rem;
+  color: #c00;
+  margin-top: 0.25rem;
+}
+
+.edit_listing_row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 600px) {
+  .edit_listing_row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.edit_listing_actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  padding-top: 1.5rem;
+  margin-top: 0.5rem;
+  border-top: 1px solid #ebebeb;
+}
+
+.edit_listing_btn_primary,
+.edit_listing_btn_secondary {
+  padding: 0.7rem 1.5rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.edit_listing_btn_primary {
+  background: #ff5a5f;
+  color: #fff;
+  border: none;
+}
+
+.edit_listing_btn_primary:hover:not(:disabled) {
+  background: #e04848;
+}
+
+.edit_listing_btn_primary:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.edit_listing_btn_secondary {
+  background: #fff;
+  color: #222;
+  border: 1px solid #222;
+}
+
+.edit_listing_btn_secondary:hover {
+  background: #f7f7f7;
+}

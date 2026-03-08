@@ -1,6 +1,49 @@
-# Getting Started with Create React App
+# Airbnb Clone
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full-stack Airbnb-style app: browse stays, search by location and category, view listing details with a booking cost calculator, manage listings (CRUD), and authenticate with JWT. Built with **React** (Redux, React Router) and **Express** + **MongoDB** (Mongoose).
+
+## Quick start
+
+1. **Backend** (API + database)
+   ```bash
+   cd backend
+   npm install
+   cp .env.example .env   # set MONGODB_URI and JWT_SECRET
+   npm run server         # http://localhost:5000
+   ```
+   Ensure MongoDB is running locally or set `MONGODB_URI` in `.env`.
+
+2. **Frontend**
+   ```bash
+   npm install
+   npm start              # http://localhost:3000
+   ```
+
+## Tech stack
+
+- **Frontend:** React, Redux, React Router, MUI (icons), CSS
+- **Backend:** Express, Mongoose, JWT (jsonwebtoken), bcryptjs, helmet, express-rate-limit
+- **Database:** MongoDB
+
+## Documentation
+
+- [**API reference**](docs/API.md) – Auth, listings, reservations (request/response, status codes)
+- [**Security**](docs/SECURITY.md) – JWT, validation, rate limiting, production checklist
+- [**Backend**](backend/README.md) – MongoDB + Express setup
+- [**Frontend structure**](src/README.md) – Components, actions, utils
+
+## Features
+
+- Home: banner, province cards, “Inspiration for your next trip”, gift cards, hosting CTA, category tabs with filtered listings
+- Search: filter by location and category, listing cards with details and navigation to listing page
+- Listing detail: gallery, heading/subheading, cost calculator (dates, guests), static sections (about, amenities, house rules)
+- Listings management: create, edit, delete listings (with validation)
+- Auth: login / register (JWT), protected routes, session handling and 401 logout
+- Reservations: create and list reservations (API)
+
+## UI notes
+
+- Card hover: card lifts with stronger shadow, image zooms slightly (0.25s / 0.4s).
 
 ## Available Scripts
 
