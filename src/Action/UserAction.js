@@ -50,7 +50,7 @@ export const login = (email, password) => async (dispatch) => {
       headers: { "Content-Type": "application/json" },
     };
     const { data } = await axios.post(
-      "http://localhost:5000/login",
+      "/login",
       { email, password },
       config
     );

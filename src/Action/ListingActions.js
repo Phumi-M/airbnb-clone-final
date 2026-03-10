@@ -17,13 +17,13 @@ import { showToast } from "./ToastAction";
 const LISTINGS_STORAGE_KEY = "airbnb_listings";
 
 /**
- * Fetch listings: GET http://localhost:5000/listings.
+ * Fetch listings: GET /listings (base URL from REACT_APP_API_URL).
  * On success, dispatch payload (array). On failure, use saved listings from localStorage or dispatch LISTING_LIST_FAIL.
  */
 export const listListing = () => async (dispatch) => {
   try {
     dispatch({ type: LISTING_LIST_REQUEST });
-    const { data } = await axios.get("http://localhost:5000/listings");
+    const { data } = await axios.get("/listings");
     dispatch({ type: LISTING_LIST_SUCCESS, payload: data });
   } catch (error) {
     const friendlyMessage = "Could not load listings. Showing saved data if available.";
