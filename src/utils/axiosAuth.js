@@ -1,16 +1,16 @@
 /**
  * Axios instance configuration: attach JWT to requests and handle 401/5xx/network errors globally.
  * Import this module (e.g. in index.js or before any API call) so interceptors are registered.
- * API base comes from REACT_APP_API_URL (e.g. https://airbnb-backend.onrender.com) or localhost:5000.
+ * API base: REACT_APP_API_URL (e.g. https://airbnb-backend.onrender.com) or http://localhost:5000.
  */
 import axios from "axios";
-import { API_BASE_URL } from "../config/api";
-
-axios.defaults.baseURL = API_BASE_URL;
 import { getValidToken, removeStoredToken } from "./auth";
 import store from "../store";
 import { showToast } from "../Action/ToastAction";
 import { logout } from "../Action/UserAction";
+
+const API_BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
+axios.defaults.baseURL = API_BASE_URL;
 
 /** Request: add Authorization: Bearer <token> when getValidToken() returns a token. */
 axios.interceptors.request.use(
