@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { closeModal } from "../../Action/ModalAction";
 import { login, register, clearLoginError } from "../../Action/UserAction";
-import { validateEmail, validatePassword, validateRequired, MIN_PASSWORD_LENGTH } from "../../utils/validation";
+import { validateEmail, validatePassword, validateRequired } from "../../utils/validation";
 import "./Login.css";
 
 const Login = () => {

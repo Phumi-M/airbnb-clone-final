@@ -131,7 +131,6 @@ const Header = () => {
             onChange={(e) => setLocation(e.target.value)}
             onFocus={() => setWhereDropdownOpen(true)}
             aria-label="Search destinations"
-            aria-expanded={whereDropdownOpen}
             aria-haspopup="listbox"
             aria-autocomplete="list"
           />
@@ -146,6 +145,7 @@ const Header = () => {
                       key={dest.value || "nearby"}
                       type="button"
                       role="option"
+                      aria-selected={location === dest.value}
                       className="header_whereDropdown_item"
                       onClick={() => {
                         setLocation(dest.value);

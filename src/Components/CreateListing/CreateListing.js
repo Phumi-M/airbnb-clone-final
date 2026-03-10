@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import { useDispatch } from "react-redux";
-import { useNavigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { createListing } from "../../Action/ListingActions";
 import { showToast } from "../../Action/ToastAction";
 import { scrollToFirstError } from "../../utils/dom";
@@ -72,7 +72,6 @@ const defaultForm = () => ({
 
 const CreateListing = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const fileInputRef = useRef(null);
   const formRef = useRef(null);
 
