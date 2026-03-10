@@ -3,6 +3,7 @@
  * Security: helmet, body size limit, rate limit on auth, CORS and JWT_SECRET in production.
  */
 require("dotenv").config();
+const path = require("path");
 const express = require("express");
 const cors = require("cors");
 const helmet = require("helmet");
@@ -40,11 +41,20 @@ const authLimiter = rateLimit({
 app.use("/login", authLimiter);
 app.use("/register", authLimiter);
 
+app.get("/health", (req, res) => res.json({ ok: true }));
+
 app.use("/", authRoutes);
 app.use("/listings", listingRoutes);
 app.use("/reservations", reservationRoutes);
 
-app.get("/health", (req, res) => res.json({ ok: true }));
+// Serve React build in production (must be after API routes)
+if (isProduction) {
+  const buildPath = path.join(__dirname, "..", "build");
+  app.use(express.static(buildPath));
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(buildPath, "index.html"));
+  });
+}
 
 app.listen(PORT, () => {
   console.log("Server running on http://localhost:" + PORT);

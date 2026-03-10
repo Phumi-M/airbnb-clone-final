@@ -2,6 +2,9 @@
   "name": "airbnb-clone",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=18"
+  },
   "overrides": {
     "react-date-range": {
       "date-fns": "2.30.0"
@@ -38,7 +41,8 @@
     "server": "cd backend && npm run server",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "heroku-postbuild": "npm run build && npm install --prefix backend"
   },
   "eslintConfig": {
     "extends": [
