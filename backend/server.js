@@ -48,16 +48,21 @@ app.use("/", authRoutes);
 app.use("/listings", listingRoutes);
 app.use("/reservations", reservationRoutes);
 
-// Serve React build in production only if it exists (e.g. combined deploy).
-// When backend is deployed alone (e.g. Render backend service), build/ is not present — skip static serving.
-if (isProduction) {
-  const buildPath = path.join(__dirname, "..", "build");
-  if (fs.existsSync(buildPath)) {
-    app.use(express.static(buildPath));
-    app.get("*", (req, res) => {
-      res.sendFile(path.join(buildPath, "index.html"));
-    });
-  }
+// Serve React build in production only if build dir and index.html exist.
+// When backend is deployed alone (Root Dir = backend), build/ is not present — skip static serving.
+const buildPath = path.join(__dirname, "..", "build");
+const buildIndexPath = path.join(buildPath, "index.html");
+const hasBuild = isProduction && fs.existsSync(buildPath) && fs.existsSync(buildIndexPath);
+if (hasBuild) {
+  app.use(express.static(buildPath));
+  app.get("*", (req, res) => {
+    res.sendFile(buildIndexPath);
+  });
+} else if (isProduction) {
+  // No build: respond to GET / so visitors see a message instead of "Cannot GET /"
+  app.get("/", (req, res) => {
+    res.status(200).type("text/plain").send("API only. Use the frontend URL to open the app.");
+  });
 }
 
 app.listen(PORT, () => {

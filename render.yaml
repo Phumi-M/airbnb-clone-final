@@ -1,0 +1,8 @@
+# Render: one web service — builds React at repo root, runs backend and serves build/
+# Set MONGODB_URI and JWT_SECRET in Render dashboard (Environment).
+services:
+  - type: web
+    name: airbnb-clone
+    runtime: node
+    buildCommand: npm install && npm run build && cd backend && npm install
+    startCommand: cd backend && node server.js
