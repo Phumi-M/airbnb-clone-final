@@ -4,6 +4,7 @@
  */
 require("dotenv").config();
 const path = require("path");
+const fs = require("fs");
 const express = require("express");
 const cors = require("cors");
 const helmet = require("helmet");
@@ -47,13 +48,16 @@ app.use("/", authRoutes);
 app.use("/listings", listingRoutes);
 app.use("/reservations", reservationRoutes);
 
-// Serve React build in production (must be after API routes)
+// Serve React build in production only if it exists (e.g. combined deploy).
+// When backend is deployed alone (e.g. Render backend service), build/ is not present — skip static serving.
 if (isProduction) {
   const buildPath = path.join(__dirname, "..", "build");
-  app.use(express.static(buildPath));
-  app.get("*", (req, res) => {
-    res.sendFile(path.join(buildPath, "index.html"));
-  });
+  if (fs.existsSync(buildPath)) {
+    app.use(express.static(buildPath));
+    app.get("*", (req, res) => {
+      res.sendFile(path.join(buildPath, "index.html"));
+    });
+  }
 }
 
 app.listen(PORT, () => {
