@@ -1,3 +1,7 @@
+/**
+ * Express server with MongoDB (Mongoose).
+ * Security: helmet, body size limit, rate limit on auth, CORS and JWT_SECRET in production.
+ */
 require("dotenv").config();
 const path = require("path");
 const express = require("express");
@@ -10,26 +14,16 @@ const listingRoutes = require("./routes/listings");
 const reservationRoutes = require("./routes/reservations");
 
 const app = express();
-
-// Use Render-assigned PORT or fallback
 const PORT = process.env.PORT || 5000;
-
-// Check JWT secret in production
 const isProduction = process.env.NODE_ENV === "production";
+
 if (isProduction && (!process.env.JWT_SECRET || String(process.env.JWT_SECRET).trim().length < 16)) {
   console.error("JWT_SECRET must be set in production (min 16 characters).");
   process.exit(1);
 }
 
-// Connect to MongoDB using environment variable
-const MONGO_URI = process.env.MONGODB_URI;
-if (!MONGO_URI) {
-  console.error("MONGODB_URI must be set in environment variables!");
-  process.exit(1);
-}
-connectDB(MONGO_URI);
+connectDB();
 
-// Middleware
 app.use(helmet({ contentSecurityPolicy: false }));
 app.use(cors({
   origin: isProduction ? (process.env.CORS_ORIGIN || true) : true,
@@ -37,7 +31,6 @@ app.use(cors({
 }));
 app.use(express.json({ limit: "100kb" }));
 
-// Rate limiting for auth
 const authLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
   max: 20,
@@ -48,15 +41,13 @@ const authLimiter = rateLimit({
 app.use("/login", authLimiter);
 app.use("/register", authLimiter);
 
-// Health check endpoint
 app.get("/health", (req, res) => res.json({ ok: true }));
 
-// API routes
 app.use("/", authRoutes);
 app.use("/listings", listingRoutes);
 app.use("/reservations", reservationRoutes);
 
-// Serve React build in production (after API routes)
+// Serve React build in production (must be after API routes)
 if (isProduction) {
   const buildPath = path.join(__dirname, "..", "build");
   app.use(express.static(buildPath));
@@ -65,7 +56,6 @@ if (isProduction) {
   });
 }
 
-// Start server
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log("Server running on http://localhost:" + PORT);
 });

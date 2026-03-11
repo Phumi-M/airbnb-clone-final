@@ -4,6 +4,7 @@
   "description": "Airbnb clone API with MongoDB and Mongoose",
   "main": "server.js",
   "scripts": {
+    "start": "node server.js",
     "server": "node server.js",
     "dev": "node server.js"
   },
